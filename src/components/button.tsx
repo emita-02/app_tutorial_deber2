@@ -1,23 +1,34 @@
-import { StyleSheet, View, Pressable, Text } from 'react-native';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type Props = {
   label: string;
-  theme?: 'primary';
+  theme?: "primary";
   onPress?: () => void;
 };
 
 export default function Button({ label, theme, onPress }: Props) {
-  if (theme === 'primary') {
+  if (theme === "primary") {
     return (
       <View
         style={[
           styles.buttonContainer,
-          { borderWidth: 4, borderColor: '#ffd33d', borderRadius: 18 },
-        ]}>
-        <Pressable style={[styles.button, { backgroundColor: '#fff' }]} onPress={onPress}>
-          <FontAwesome name="picture-o" size={18} color="#25292e" style={styles.buttonIcon} />
-          <Text style={[styles.buttonLabel, { color: '#25292e' }]}>{label}</Text>
+          { borderWidth: 4, borderColor: "#77ABD9", borderRadius: 18 },
+        ]}
+      >
+        <Pressable
+          style={[styles.button, { backgroundColor: "#F2ECCE" }]}
+          onPress={onPress}
+        >
+          <FontAwesome
+            name="picture-o"
+            size={18}
+            color="#002A5C"
+            style={styles.buttonIcon}
+          />
+          <Text style={[styles.buttonLabel, { color: "#002A5C" }]}>
+            {label}
+          </Text>
         </Pressable>
       </View>
     );
@@ -26,7 +37,9 @@ export default function Button({ label, theme, onPress }: Props) {
   return (
     <View style={styles.buttonContainer}>
       <Pressable style={styles.button} onPress={onPress}>
-        <Text style={styles.buttonLabel}>{label}</Text>
+        <Text style={[styles.buttonLabel, styles.secondaryButtonLabel]}>
+          {label}
+        </Text>
       </Pressable>
     </View>
   );
@@ -37,23 +50,27 @@ const styles = StyleSheet.create({
     width: 320,
     height: 68,
     marginHorizontal: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     padding: 3,
   },
   button: {
     borderRadius: 10,
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
+    width: "100%",
+    height: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    backgroundColor: "#77ABD9",
   },
   buttonIcon: {
     paddingRight: 8,
   },
   buttonLabel: {
-    color: '#fff',
+    color: "#002A5C",
     fontSize: 16,
+  },
+  secondaryButtonLabel: {
+    color: "#002A5C",
   },
 });

@@ -11,11 +11,11 @@ export default function AboutScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#25292e',
+    backgroundColor: '#002A5C',
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
-    color: '#fff',
+    color: '#F2ECCE',
   },
 });
